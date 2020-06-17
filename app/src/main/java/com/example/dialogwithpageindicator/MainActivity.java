@@ -1,11 +1,12 @@
 package com.example.dialogwithpageindicator;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.fragment.app.DialogFragment;
+        import androidx.fragment.app.FragmentManager;
+        import androidx.recyclerview.widget.RecyclerView;
+        import androidx.viewpager2.widget.ViewPager2;
 
-import android.os.Bundle;
+        import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void showDialog() {
         FragmentManager fragmentManager=getSupportFragmentManager();
-        PageIndicatorFragment pageIndicatorFragment=new PageIndicatorFragment();
+        PageIndicatorFragment pageIndicatorFragment=PageIndicatorFragment.newInstance(false);
         pageIndicatorFragment.show(fragmentManager,"viewpager2");
+
+        //fragmentManager.beginTransaction().add(R.id.dialog_page_indicator,pageIndicatorFragment).commit();
     }
 }
