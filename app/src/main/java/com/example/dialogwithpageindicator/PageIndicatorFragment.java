@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 public class PageIndicatorFragment extends DialogFragment {
 
-    private static final String ARG_SHOW_AS_DIALOG = "PageIndicatorFragment";
+    public static final String ARG_SHOW_AS_DIALOG = "PageIndicatorFragment";
     private AutoCompleteTextView txt;
     private ImageView imageView;
     ViewPager2 viewPager;
@@ -55,6 +55,7 @@ public class PageIndicatorFragment extends DialogFragment {
         viewPager=(ViewPager2)view.findViewById(R.id.pager);
         ViewPagerLatest viewPagerLatest=new ViewPagerLatest(getActivity());
         viewPager.setAdapter(viewPagerLatest);
+
 
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override

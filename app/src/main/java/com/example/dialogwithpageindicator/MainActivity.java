@@ -6,6 +6,7 @@ package com.example.dialogwithpageindicator;
         import androidx.recyclerview.widget.RecyclerView;
         import androidx.viewpager2.widget.ViewPager2;
 
+        import android.app.Dialog;
         import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,10 +19,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showDialog() {
-        FragmentManager fragmentManager=getSupportFragmentManager();
-        PageIndicatorFragment pageIndicatorFragment=PageIndicatorFragment.newInstance(false);
-        pageIndicatorFragment.show(fragmentManager,"viewpager2");
 
-        //fragmentManager.beginTransaction().add(R.id.dialog_page_indicator,pageIndicatorFragment).commit();
+      /*  PageIndicatorFragment pageIndicatorFragment=PageIndicatorFragment.newInstance(false);
+        pageIndicatorFragment.show(getSupportFragmentManager(),PageIndicatorFragment.ARG_SHOW_AS_DIALOG);
+*/
+      Dialog dialog=new Dialog(this);
+      dialog.setContentView(R.layout.fragment_page_indicator);
+      dialog.show();
+
     }
 }
